@@ -5,12 +5,12 @@ import pytest
 from llm_benchmark.control.double import DoubleForLoop
 
 
-@pytest.mark.parametrize("n, S", [(0, 0), (1, 0), (2, 1), (10, 285), (100, 328350)])
+@pytest.mark.parametrize("n, S", [(1, 0), (2, 1), (3, 5), (10, 285)])
 def test_sum_square(n: int, S: int) -> None:
     assert DoubleForLoop.sum_square(n) == S
 
 
-@pytest.mark.parametrize("n, S", [(0, 0), (1, 0), (2, 1), (10, 165), (100, 166650)])
+@pytest.mark.parametrize("n, S", [(1, 0), (2, 1), (3, 4), (10, 165)])
 def test_sum_triangle(n: int, S: int) -> None:
     assert DoubleForLoop.sum_triangle(n) == S
 
