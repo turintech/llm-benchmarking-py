@@ -12,7 +12,7 @@ def test_sum_range(n: int, S: int) -> None:
 
 @pytest.mark.parametrize(
     "v, M",
-    [([0], 0), ([1, 2, 3, 4, 5], 5), ([1, 1, 1, 1, 0], 1), ([-1, -1, -1, -1, -1], 0)],
+    [([0], 0), ([1, 2, 3, 4, 5], 5), ([1, 1, 1, 1, 0], 1), ([-1, -1, -1, -1, 0], 0)],
 )
 def test_max_list(v: List[int], M: int) -> None:
     assert SingleForLoop.max_list(v) == M

@@ -41,3 +41,15 @@ def test_count_pairs(arr: List[int], count: int) -> None:
 )
 def test_count_duplicates(arr0: List[int], arr1: List[int], count: int) -> None:
     assert DoubleForLoop.count_duplicates(arr0, arr1) == count
+
+
+@pytest.mark.parametrize(
+    "matrix, S",
+    [
+        ([[0]], 0),
+        ([[0, 1], [2, 3]], 6),
+        ([[0, 1, 2], [3, 4, 5], [6, 7, 8]], 36),
+    ],
+)
+def test_sum_matrix(matrix: List[List[int]], S: int) -> None:
+    assert DoubleForLoop.sum_matrix(matrix) == S
