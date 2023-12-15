@@ -23,7 +23,7 @@ def double():
         f"count_pairs(random_list(30, 10)): {DoubleForLoop.count_pairs(GenList.random_list(30, 10))}"
     )
     print(
-        f"count_duplicates(10, 10)",
+        "count_duplicates(10, 10)",
         DoubleForLoop.count_duplicates(
             GenList.random_list(10, 2), GenList.random_list(10, 2)
         ),
