@@ -20,18 +20,14 @@ class SingleForLoop:
     @staticmethod
     def max_list(v: List[int]) -> int:
         """Maximum value in a vector
-
+    
         Args:
             v (List[int]): Vector of integers
-
+    
         Returns:
             int: Maximum value in the vector
         """
-        max_val = v[0]
-        for i in range(1, len(v)):
-            if v[i] > max_val:
-                max_val = v[i]
-        return max_val
+        return max(v)
 
     @staticmethod
     def sum_modulus(n: int, m: int) -> int:
