@@ -22,11 +22,19 @@ def test_is_prime(n: int, is_prime: bool) -> None:
     assert Primes.is_prime(n) == is_prime
 
 
+def test_benchmark_is_prime(benchmark) -> None:
+    benchmark(Primes.is_prime, 17)
+
+
 @pytest.mark.parametrize(
     "n, S", [(0, 0), (1, 0), (2, 0), (3, 2), (4, 5), (10, 17), (100, 1060)]
 )
 def test_sum_primes(n: int, S: int) -> None:
     assert Primes.sum_primes(n) == S
+
+
+def test_benchmark_sum_primes(benchmark) -> None:
+    benchmark(Primes.sum_primes, 20)
 
 
 @pytest.mark.parametrize(
@@ -44,3 +52,7 @@ def test_sum_primes(n: int, S: int) -> None:
 )
 def test_prime_factors(n: int, factors: List[int]) -> None:
     assert Primes.prime_factors(n) == factors
+
+
+def test_benchmark_prime_factors(benchmark) -> None:
+    benchmark(Primes.prime_factors, 84)
