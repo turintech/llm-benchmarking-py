@@ -1,6 +1,7 @@
 from llm_benchmark.control.double import DoubleForLoop
 from llm_benchmark.control.single import SingleForLoop
 from llm_benchmark.generator.gen_list import GenList
+from llm_benchmark.sql.query import SqlQuery
 
 
 def single():
@@ -34,6 +35,28 @@ def double():
     print()
 
 
+def sql():
+    print("SQL")
+    print("---")
+
+    print(f"query_album('Presence'): {SqlQuery.query_album('Presence')}")
+    print(f"query_album('Roundabout'): {SqlQuery.query_album('Roundabout')}")
+    print()
+
+    print("join_albums()")
+    print(SqlQuery.join_albums()[0])
+    print()
+
+    print("top_invoices()")
+    print(SqlQuery.top_invoices())
+    print()
+
+
 def main():
     single()
     double()
+    sql()
+
+
+if __name__ == "__main__":
+    main()
