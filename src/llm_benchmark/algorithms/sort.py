@@ -35,25 +35,22 @@ class Sort:
                 next_value += 1
 
     @staticmethod
-    def max_n(v: List[int], n: int) -> List[int]:
-        """Find the maximum n numbers in a list
 
-        Args:
-            v (List[int]): List of integers
-            n (int): Number of maximum values to find
+def max_n(v: List[int], n: int) -> List[int]:
+    """Find the maximum n numbers in a list
 
-        Returns:
-            List[int]: List of maximum n values
-        """
-        tmp = v.copy()
-        ret = [-maxsize - 1] * n
-        for i in range(n):
-            max_val = tmp[0]
-            max_idx = 0
-            for j in range(1, len(tmp)):
-                if tmp[j] > max_val:
-                    max_val = tmp[j]
-                    max_idx = j
-            ret[i] = max_val
-            tmp.pop(max_idx)
-        return ret
+    Args:
+        v (List[int]): List of integers
+        n (int): Number of maximum values to find
+
+    Returns:
+        List[int]: List of maximum n values
+    """
+    
+    # Avoid copying entire list
+    v = v[:n]
+    
+    # Sort in place 
+    v.sort(reverse=True)
+    
+    return v
