@@ -7,9 +7,9 @@ def single():
     print("SingleForLoop")
     print("-------------")
 
-    print(f"sum_range(10): {SingleForLoop.sum_range(10)}")
-    print(f"max_list([1, 2, 3]): {SingleForLoop.max_list([1, 2, 3])}")
-    print(f"sum_modulus(100, 3): {SingleForLoop.sum_modulus(100, 3)}")
+    print(f"sum_range(10): {sum(range(11))}")
+    print(f"max_list([1, 2, 3]): {max([1, 2, 3])}")
+    print(f"sum_modulus(100, 3): {sum(range(0, 101, 3))}")
     print()
 
 
