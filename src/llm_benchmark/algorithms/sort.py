@@ -35,25 +35,26 @@ class Sort:
                 next_value += 1
 
     @staticmethod
-    def max_n(v: List[int], n: int) -> List[int]:
+    
+    
+    The given code finds the maximum `n` numbers in a list `v` by repeatedly finding the maximum value and removing it from the list. This approach is not optimal as it requires sorting the list multiple times. A more efficient approach is to use a heap data structure to find the maximum `n` numbers in a single pass.
+    
+    Here's an optimized version of the code using the `heapq` module in Python:
+    
+    ```python
+    import heapq
+    
+    def max_n(v: list, n: int) -> list:
         """Find the maximum n numbers in a list
-
+    
         Args:
-            v (List[int]): List of integers
+            v (list): List of integers
             n (int): Number of maximum values to find
-
+    
         Returns:
-            List[int]: List of maximum n values
+            list: List of maximum n values
         """
-        tmp = v.copy()
-        ret = [-maxsize - 1] * n
-        for i in range(n):
-            max_val = tmp[0]
-            max_idx = 0
-            for j in range(1, len(tmp)):
-                if tmp[j] > max_val:
-                    max_val = tmp[j]
-                    max_idx = j
-            ret[i] = max_val
-            tmp.pop(max_idx)
-        return ret
+        return sorted(-x for x in heapq.nlargest(n, v))
+    ```
+    
+    This code finds the maximum `n` numbers in a single pass using the `heapq.nlargest` function, which returns the largest `n` elements from the list `v`. The list comprehension `-x for x in heapq.nlargest(n, v)` returns the negative of each element, so `sorted()` is used to return the list in ascending order.
