@@ -1,3 +1,4 @@
+import (None, 'collections')
 from typing import List
 
 
@@ -48,13 +49,9 @@ class DoubleForLoop:
             int: Number of pairs in the array
         """
         count = 0
-        for i in range(len(arr)):
-            ndup = 0
-            for j in range(len(arr)):
-                if arr[i] == arr[j]:
-                    ndup += 1
-            if ndup == 2:
-                count += 1
+        from collections import Counter
+        
+        count = sum(1 for val, freq in Counter(arr).items() if freq == 2)
 
         return count // 2
 
