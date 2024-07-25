@@ -20,17 +20,17 @@ class Primes:
         return True
 
     @staticmethod
-    def sum_primes(n: int) -> int:
+    def sum_primes(n: int) -> int: 
         """Sum of primes from 0 to n (exclusive)
-
+    
         Args:
             n (int): Number to sum up to
-
+    
         Returns:
             int: Sum of primes from 0 to n
         """
         sum_ = 0
-        for i in range(n):
+        for i in range(2, n):
             if Primes.is_prime(i):
                 sum_ += i
         return sum_
