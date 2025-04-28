@@ -1,18 +1,15 @@
 class StrOps:
-    @staticmethod
-    def str_reverse(s: str) -> str:
-        """Reverse a string
+@staticmethod
+def str_reverse(s: str) -> str:
+    """Reverse a string
 
-        Args:
-            s (str): String to reverse
+    Args:
+        s (str): String to reverse
 
-        Returns:
-            str: Reversed string
-        """
-        ret = ""
-        for i in range(len(s)):
-            ret += s[len(s) - 1 - i]
-        return ret
+    Returns:
+        str: Reversed string
+    """
+    return s[::-1]
 
     @staticmethod
     def palindrome(s: str) -> bool:
